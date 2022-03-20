@@ -11,3 +11,13 @@ export const dbPool = new Pool({
     enabled: false,
   },
 }, POOL_CONNECTIONS);
+
+const init = async () => {
+  const client = await dbPool.connect();
+  await client.queryArray(
+    "CREATE TABLE IF NOT EXISTS commandversions (guildId BIGINT NOT NULL PRIMARY KEY, version INTEGER NOT NULL)",
+  );
+  client.release();
+};
+
+await init();
