@@ -19,8 +19,9 @@ import { replyToInteraction } from "../../utils/replies.ts";
 import { DEV_GUILD_ID } from "../../../configs.ts";
 import { updateGuildCommands } from "../../utils/slashUpdater.ts";
 import { deleteCommandVersion, usesLatestCommandVersion } from "../../database/commandVersion.ts";
+import ping from "./general/ping.ts";
 
-const commands: Record<string, Command> = {};
+const commands: Record<string, Command> = { ping };
 export default commands;
 
 function logCommand(

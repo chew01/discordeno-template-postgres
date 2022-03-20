@@ -3,8 +3,8 @@ import { createCommand } from "../mod.ts";
 import { snowflakeToTimestamp } from "../../../utils/helpers.ts";
 
 const command = createCommand({
-  name: "ping",
-  description: "🏓 Check whether the bot is online and responsive.",
+  name: "info",
+  description: "📊 Check bot statistics.",
   devOnly: true,
   execute: async function (bot, interaction) {
     const time = Date.now() - snowflakeToTimestamp(interaction.id);
